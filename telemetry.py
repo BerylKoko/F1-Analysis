@@ -1,25 +1,30 @@
+"""Extend Beryl's FastF1 session -> fastest laps -> JSON workflow.
+Run: python telemetry.py --year 2025 --event Monza --session R --drivers HAM LEC
+"""
+import argparse, json
+from pathlib import Path
+from datetime import datetime, timezone
 import fastf1
-import json
 
+def export(year, event, kind, drivers, output):
+    cache=Path(__file__).parent/'f1_cache';cache.mkdir(exist_ok=True)
+    fastf1.Cache.enable_cache(str(cache))
+    session=fastf1.get_session(year,event,kind)
+    session.load(telemetry=True,weather=False,messages=True)
+    result=[]
+    for driver in drivers:
+        lap=session.laps.pick_drivers(driver).pick_fastest()
+        if lap is None or lap.empty: raise ValueError(f'No valid lap for {driver}')
+        # Car data preserves measured channels; distance is integrated by FastF1.
+        data=lap.get_car_data().add_distance().dropna(subset=['Distance','Speed','Throttle','Brake'])
+        data=data.sort_values('Distance').drop_duplicates('Distance')
+        samples=[{'distance':round(float(row.Distance),1),'speed':int(row.Speed),'throttle':int(row.Throttle),'brake':bool(row.Brake),'time':round(row.Time.total_seconds(),3)} for row in data.itertuples()]
+        result.append({'driver':driver,'lapNumber':int(lap.LapNumber),'lapSeconds':round(lap.LapTime.total_seconds(),3),'compound':str(lap.Compound),'tyreLife':int(lap.TyreLife),'samples':samples})
+    payload={'schemaVersion':1,'id':f'{year}-{event.lower()}-{kind.lower()}','year':year,'event':str(session.event.EventName),'session':kind,'date':str(session.date.date()),'generatedAt':datetime.now(timezone.utc).isoformat(),'source':'FastF1 / Formula 1 timing','sourceUrl':'https://docs.fastf1.dev/','method':'Fastest timed lap for each driver. Distance is integrated from speed; laps are not controlled for fuel, tyres or traffic.','drivers':result}
+    Path(output).parent.mkdir(parents=True,exist_ok=True)
+    Path(output).write_text(json.dumps(payload,separators=(',',':'),allow_nan=False))
+    print(f'Exported {output}: '+', '.join(f'{d["driver"]} {len(d["samples"])} samples' for d in result))
 
-fastf1.Cache.enable_cache('f1_cache') 
-
-print("🚨 Accessing the 2025 F1 Vault...")
-# ACT 2: Load Monza 2025 Race Session (Last year's slump baseline)
-session = fastf1.get_session(2025, 'Monza', 'R')
-session.load(telemetry=True)
-
-
-ham_lap = session.laps.pick_driver('HAM').pick_fastest()
-lec_lap = session.laps.pick_driver('LEC').pick_fastest()
-
-
-ham_telemetry = ham_lap.get_telemetry()[['Speed', 'Brake', 'Throttle']].to_dict(orient='records')
-lec_telemetry = lec_lap.get_telemetry()[['Speed', 'Brake', 'Throttle']].to_dict(orient='records')
-
-
-combined_data = {"hamilton": ham_telemetry[:100], "leclerc": lec_telemetry[:100]} # Grab a clean 100-point sample
-with open('act2_monza_2025.json', 'w') as f:
-    json.dump(combined_data, f)
-
-print("🏁 Act 2 Data Captured Successfully! Python work is done.")
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('--year',type=int,default=2025);p.add_argument('--event',default='Monza');p.add_argument('--session',default='R');p.add_argument('--drivers',nargs='+',default=['HAM','LEC']);p.add_argument('--output',default='public/data/2025-monza-r.json');a=p.parse_args()
+    export(a.year,a.event,a.session,a.drivers,a.output)
