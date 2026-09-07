@@ -9,3 +9,6 @@ export function sampleAt(samples,distance){
  return {distance,speed:a.speed+(b.speed-a.speed)*t,throttle:a.throttle+(b.throttle-a.throttle)*t,time:a.time+(b.time-a.time)*t,brake:t<.5?a.brake:b.brake};
 }
 export function commonRange(a,b){return [Math.max(a[0].distance,b[0].distance),Math.min(a.at(-1).distance,b.at(-1).distance)];}
+
+// Align time at the first shared distance to avoid differing sample start offsets.
+export function relativeGap(a,b,distance){const [start]=commonRange(a,b);return (sampleAt(a,distance).time-sampleAt(a,start).time)-(sampleAt(b,distance).time-sampleAt(b,start).time);}
