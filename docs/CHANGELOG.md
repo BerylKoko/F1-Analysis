@@ -10,4 +10,4 @@ Renamed the interface to Lap / Compare; replaced the editorial hero with compact
 
 ## Validation / remaining work
 
-TypeScript check and 3 telemetry tests pass. Browser QA of the revised interface remains pending.
+TypeScript check and 3 telemetry tests pass. Desktop and 390px iframe layouts inspected. Browser checks passed for driver selection, throttle channel, keyboard end-of-lap inspection and switching to Silverstone (HAM/VER/NOR). Full accessibility audit is not claimed.

@@ -1,46 +1,27 @@
-# 🏎️ The McQueen Effect: F1 Telemetry Engine & Performance Dashboard
+# Lap / Compare (F1-Analysis rehabilitation)
 
-An interactive frontend dashboard built with **React** and **Tailwind CSS**, powered by a **Python** data pipeline that processes high-frequency Formula 1 telemetry streams from the FastF1 API.
+Compare historical fastest-race-lap telemetry: speed, throttle, braking and relative elapsed time at a shared distance. Python/FastF1 exports versioned JSON; React/TypeScript provides driver selection, keyboard inspection and a numeric data table.
 
-![Project Status](https://img.shields.io/badge/Status-In_Development-orange)
-![Tech Stack](https://img.shields.io/badge/Stack-Python_%7C_React_%7C_Tailwind_CSS-blue)
+The original Lewis Hamilton **McQueen Effect** concept remains project history. This tool does not diagnose driver decline or attribute a cause to telemetry differences.
 
----
+## Run
 
-## 📌 Overview
+```sh
+npm ci
+npm run dev
+```
 
-*The McQueen Effect* bridges data science and frontend user experience to analyze driver performance degradation. By parsing raw speed, throttle, and braking data from 2025/2026 race sessions, the application visualizes subtle lap time variances and athletic decay across complex sector profiles.
+The committed Monza 2025 and Silverstone 2024 snapshots work without an API connection. See `telemetry.py --help` to regenerate data after installing requirements.txt. No live-race claims are made.
 
----
+## Verify
 
-## 🛠️ Tech Stack & Architecture
+```sh
+npm run build
+node --test tests/telemetry.test.mjs
+```
 
-* **Data Processing Pipeline:** Python, FastF1 API, Pandas (Extracting and structuring raw telemetric JSON streams)
-* **Frontend Application:** React, JavaScript (ES6+), Tailwind CSS
-* **UI State Management:** React Hooks (`useState`, `useEffect`) for dynamic data rendering
+## Interpretation
 
----
+The relative time-gap trace aligns sample clocks at the first shared distance. It is an interpolated estimate, not official timing. Fastest race laps may have different tyres, fuel loads and traffic. Sector boundaries are not in these snapshots and are not drawn.
 
-## 🚀 Key Features
-
-* **Telemetry Parsing:** Cleans and formats multi-driver session data into lightweight JSON structures.
-* **Interactive UI Matrix:** Displays braking and speed trends across specific track telemetry points.
-* **Responsive Architecture:** Customized layout components optimized for multi-screen data presentation.
-
----
-
-## 🔧 Installation & Setup
-🚀 Live Application
-
-**[🔗 Click here to view the live F1 Dashboard](https://your-project-link-goes-here)**
-
-*Note: This project is deployed live. No local installation or cloning is required to view the user interface.*
-
-📬 Author
-Beryl Koko
-
-Information Science Student @ Cornell University
-
-LinkedIn: linkedin.com/in/beryl-koko-28a619245
-
-GitHub: @BerylKoko
+See docs/BEFORE.md, CHANGELOG.md, ARCHITECTURE.md and INTERVIEW.md for the original work, AI-assisted changes and interview preparation. The rehabilitation branch is separate from main. No public deployment is claimed.
