@@ -1,18 +1,150 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>The McQueen Effect — Lewis Hamilton</title><script src='https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js'></script><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap' rel='stylesheet'><link rel='stylesheet' href='style.css'></head><body>
-<div class='progress'></div><nav><a class='brand' href='#top'>THE McQUEEN EFFECT</a><div class='nav-meta'>2007—2026 YTD · CAREER ANALYSIS</div></nav>
-<header id='top' class='hero'><div class='hero-photo'></div><div class='hero-wash'></div><div class='hero-copy reveal'><p class='kicker'>A career measured against an impossible baseline</p><h1>Has Lewis<br><em>actually</em> declined?</h1><p class='dek'>Lewis Hamilton went from winning more than half of his races during Mercedes' dominant era to a winless first Ferrari season. The obvious story is decline. The data makes it messier.</p><a class='scroll' href='#baseline'>Scroll through the evidence ↓</a></div><div class='hero-stat'><span>106</span><small>career Grand Prix wins<br>through Sep. 2026</small></div></header>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The McQueen Effect — Lewis Hamilton</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress"></div>
+
+<nav>
+  <a class="brand" href="#top">IS THE GOAT FADED?</a>
+  <div class="nav-meta">THE McQUEEN EFFECT · LEWIS HAMILTON 2007—2026</div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-left">
+    <p class="kicker">THE McQUEEN EFFECT</p>
+    <h1>IS THE<br><span>GOAT</span><br>FADED?</h1>
+    <p class="dek">Hamilton went from a seven-year run where winning felt routine to a winless first season at Ferrari. I wanted to know whether that was a driver decline, a car decline, or both.</p>
+    <a class="scroll" href="#baseline">START WITH THE PEAK ↓</a>
+  </div>
+  <div class="hero-photo"></div>
+  <div class="hero-index">
+    <span>44</span>
+    <small>2007 → 2026 YTD</small>
+  </div>
+</header>
+
 <main>
-<section id='baseline' class='chapter reveal'><div class='chapter-no'>01 / THE BASELINE</div><div><h2>First, define “normal.”<br>For Hamilton, that is the problem.</h2><p>From 2014–2020, Mercedes won seven consecutive Constructors' Championships. Across those 137 Hamilton starts, he won 73 races, stood on 111 podiums and took 67 poles.</p></div></section>
-<section class='baseline-grid reveal'><div class='mega'><span>53.3%</span><p>of starts became wins</p></div><div class='mega'><span>81.0%</span><p>became podiums</p></div><div class='mega'><span>48.9%</span><p>became poles</p></div></section>
-<section class='chart-section reveal'><div class='chart-head'><div><p class='eyebrow'>CAREER OUTCOME RATES</p><h3>The cliff is real.</h3></div><p class='annotation'>Season lengths changed, so raw totals mislead. These are wins, podiums and poles as a share of Grand Prix starts.</p></div><div class='chart-wrap'><canvas id='careerChart'></canvas></div></section>
-<section class='photo-break photo-mercedes'><div class='photo-caption'>THE STANDARD BECAME THE STORY <span>2014—2020</span></div></section>
-<section class='chapter reveal'><div class='chapter-no'>02 / AFTER DOMINANCE</div><div><h2>Then the car stopped being the benchmark.</h2><p>Mercedes still won the 2021 Constructors' title. After the 2022 regulation reset, it finished 3rd, 2nd and 4th across 2022–2024. Hamilton's headline results fell at the same time: no wins in 2022 or 2023, then two in 2024.</p><p class='small'>That does not prove the car caused the decline. It does mean wins alone cannot isolate the driver.</p></div></section>
-<section class='context-board reveal'><div class='context-row'><span>2020</span><b>Mercedes P1</b><i>Hamilton: 11 wins / 16 starts</i></div><div class='context-row'><span>2021</span><b>Mercedes P1</b><i>Hamilton: 8 / 22</i></div><div class='context-row'><span>2022</span><b>Mercedes P3</b><i>Hamilton: 0 / 22</i></div><div class='context-row'><span>2023</span><b>Mercedes P2</b><i>Hamilton: 0 / 22</i></div><div class='context-row'><span>2024</span><b>Mercedes P4</b><i>Hamilton: 2 / 24</i></div><div class='context-row hot'><span>2025</span><b>Ferrari P4</b><i>Hamilton: 0 / 24</i></div></section>
-<section class='chapter reveal'><div class='chapter-no'>03 / SAME CAR, HARDER QUESTION</div><div><h2>So compare him with the person in the other seat.</h2><p>A teammate is not a perfect control, but it removes a large part of the machinery problem. From 2022 onward, the picture is not a smooth decline.</p></div></section>
-<section class='chart-section reveal'><div class='chart-head'><div><p class='eyebrow'>TEAMMATE SHARE</p><h3>2025 is the low point.<br>2026 breaks the line.</h3></div><p class='annotation'>Share above 50% means Hamilton leads the season head-to-head or points split. 2026 is incomplete; conventions are documented in the repository.</p></div><div class='chart-wrap tall'><canvas id='teamChart'></canvas></div></section>
-<section class='split-callout reveal'><div><span class='year'>2025</span><strong>5—19</strong><p>qualifying vs Leclerc</p><strong>3—18</strong><p>race head-to-head</p></div><div class='arrow'>→</div><div class='current'><span class='year'>2026 YTD</span><strong>7—7</strong><p>qualifying vs Leclerc</p><strong>8—6</strong><p>race head-to-head</p></div></section>
-<section class='photo-break photo-ferrari'><div class='photo-caption'>A NEW TEAM. A NEW BASELINE. <span>2025</span></div></section>
-<section class='chapter reveal'><div class='chapter-no'>04 / THE FERRARI TEST</div><div><h2>2025 looked like the ending.<br>2026 makes it look like a transition.</h2><p>Hamilton's first Ferrari season was his first without a Grand Prix podium: sixth in the championship, 156 points, and heavily beaten by Charles Leclerc in qualifying and comparable races. Ferrari itself fell from second in 2024 to fourth in 2025 and won no Grand Prix.</p><p>Through 14 Grands Prix in 2026, Hamilton is third in the championship with 191 total points, one Grand Prix win and five Grand Prix podiums. Ferrari's intra-team fight is even in qualifying, while Hamilton leads the race head-to-head.</p></div></section>
-<section class='verdict reveal'><p class='eyebrow'>WHAT THE DATA SUPPORTS</p><h2>Decline? <em>Yes — but not one clean decline.</em></h2><div class='verdict-grid'><article><span>01</span><h4>The results declined.</h4><p>The dominant-era win, podium and pole rates did not survive the post-2021 period. That part is measurable and substantial.</p></article><article><span>02</span><h4>The baseline was extraordinary.</h4><p>“Decline” starts from seven seasons in which more than half of Hamilton's starts became wins. Comparing every later season to that peak magnifies the visual fall.</p></article><article><span>03</span><h4>The car changed with the results.</h4><p>Mercedes fell away from championship-winning machinery after 2021; Ferrari then finished fourth in Hamilton's first season. Absolute results cannot separate those effects.</p></article><article><span>04</span><h4>Teammate evidence is uneven.</h4><p>2024–25 provide genuine evidence of relative weakness, especially qualifying. But the 2026 rebound is inconsistent with a simple, steady year-by-year deterioration story.</p></article></div><p class='final-line'>The McQueen Effect is not “Hamilton never declined.” It is that <strong>peak dominance is a terrible neutral baseline.</strong> The more defensible story is a decline in some dimensions, amplified by machinery and adaptation — with enough recent recovery to reject the simplest version of “he is just fading.”</p></section>
-<section class='method reveal'><div><p class='eyebrow'>METHOD</p><h3>What I measured</h3></div><div class='method-grid'><p><b>Outcome rates</b><br>Wins, podiums and poles divided by Grand Prix starts.</p><p><b>Teammate comparison</b><br>Qualifying H2H, race H2H and share of teammate-pair championship points.</p><p><b>Car context</b><br>Constructor championship position beside driver outcomes.</p><p><b>Limits</b><br>Teammates are not perfect controls; 2026 is incomplete; head-to-head rules differ by source.</p></div></section></main>
-<footer><div><b>THE McQUEEN EFFECT</b><br><span>Lewis Hamilton career analysis · Beryl Koko</span></div><div class='credits'>Data: Formula 1 official results + documented cross-checks.<br>Images: Wikimedia Commons, CC licenses. Full provenance in repository.</div></footer><script src='analysis.js'></script></body></html>
+<section id="baseline" class="chapter reveal">
+  <div class="chapter-no">01 / THE PEAK</div>
+  <div>
+    <h2>Hamilton’s “normal” was ridiculous.</h2>
+    <p>Mercedes won seven straight Constructors’ Championships from 2014–2020. Hamilton started 137 Grands Prix in that stretch. He won 73, finished on the podium 111 times, and took 67 poles.</p>
+  </div>
+</section>
+
+<section class="baseline-grid reveal">
+  <div class="mega"><span>53.3%</span><p>WIN RATE · 2014–2020</p></div>
+  <div class="mega"><span>81.0%</span><p>PODIUM RATE · 2014–2020</p></div>
+  <div class="mega"><span>48.9%</span><p>POLE RATE · 2014–2020</p></div>
+</section>
+
+<section class="chart-section reveal">
+  <div class="chart-head">
+    <div><p class="eyebrow">CAREER OUTCOME RATES</p><h3>Then the line drops.</h3></div>
+    <p class="annotation">F1 seasons are not the same length. I converted wins, podiums and poles to a share of Grand Prix starts so a 16-race season and a 24-race season can sit on the same chart.</p>
+  </div>
+  <div class="chart-wrap"><canvas id="careerChart"></canvas></div>
+</section>
+
+<section class="photo-break photo-mercedes">
+  <div class="photo-caption"><b>2014—2020</b><span>73 WINS · 111 PODIUMS · 67 POLES</span></div>
+</section>
+
+<section class="chapter reveal">
+  <div class="chapter-no">02 / WHAT CHANGED?</div>
+  <div>
+    <h2>Mercedes stopped winning everything.</h2>
+    <p>Mercedes still took the 2021 Constructors’ title. After the 2022 regulation reset, the team finished third, second and fourth across 2022–2024. Hamilton’s results dropped with it: zero wins in 2022, zero in 2023, then two in 2024.</p>
+    <p class="small">That does not make the car a complete explanation. It does make raw win totals a bad way to measure the driver by themselves.</p>
+  </div>
+</section>
+
+<section class="constructor-strip reveal">
+  <div><small>2020</small><b>P1</b><span>11 wins</span></div>
+  <div><small>2021</small><b>P1</b><span>8 wins</span></div>
+  <div><small>2022</small><b>P3</b><span>0 wins</span></div>
+  <div><small>2023</small><b>P2</b><span>0 wins</span></div>
+  <div><small>2024</small><b>P4</b><span>2 wins</span></div>
+  <div class="ferrari"><small>2025</small><b>P4</b><span>0 wins</span></div>
+</section>
+
+<section class="chapter reveal">
+  <div class="chapter-no">03 / SAME TEAM</div>
+  <div>
+    <h2>The teammate test is where it gets interesting.</h2>
+    <p>Comparing Hamilton with the driver in the other car does not remove every variable, but it gets much closer than comparing trophy counts across different machinery.</p>
+  </div>
+</section>
+
+<section class="chart-section reveal">
+  <div class="chart-head">
+    <div><p class="eyebrow">TEAMMATE SHARE</p><h3>No smooth slide.</h3></div>
+    <p class="annotation">Above 50% means Hamilton leads that season’s head-to-head or teammate-pair points split. 2026 is season-to-date.</p>
+  </div>
+  <div class="chart-wrap tall"><canvas id="teamChart"></canvas></div>
+</section>
+
+<section class="duel reveal">
+  <div class="duel-year bad"><span>2025</span><strong>5—19</strong><p>QUALIFYING VS LECLERC</p><strong>3—18</strong><p>RACE H2H</p></div>
+  <div class="duel-copy"><p>One season later:</p><span>↘</span></div>
+  <div class="duel-year good"><span>2026 YTD</span><strong>7—7</strong><p>QUALIFYING VS LECLERC</p><strong>8—6</strong><p>RACE H2H</p></div>
+</section>
+
+<section class="victory reveal">
+  <div class="victory-photo"></div>
+  <div class="victory-copy">
+    <p class="eyebrow">BARCELONA · 14 JUNE 2026</p>
+    <div class="big-one">1</div>
+    <h2>The win came back.</h2>
+    <p>Hamilton won the 2026 Barcelona-Catalunya Grand Prix for Ferrari, his first Grand Prix victory for the team. Through 14 Grands Prix he sits third in the championship with 191 points and five podiums.</p>
+    <a href="https://www.formula1.com/en/latest/article/hamilton-claims-stellar-maiden-grand-prix-victory-for-ferrari-in-barcelona-as-antonelli-suffers-shock-retirement.4yCXiPLHUdcnl2BwNpqUIa" target="_blank" rel="noreferrer">SEE THE OFFICIAL WIN + TROPHY PHOTOS ↗</a>
+    <small>Photo shown: Lewis Hamilton at the 2026 British GP, Jason Puddephatt / Wikimedia Commons, CC BY-SA 4.0.</small>
+  </div>
+</section>
+
+<section class="chapter reveal">
+  <div class="chapter-no">04 / FERRARI</div>
+  <div>
+    <h2>2025 was brutal. Then 2026 happened.</h2>
+    <p>Hamilton’s first Ferrari season ended without a Grand Prix podium: sixth in the championship, 156 points, and behind Leclerc in both qualifying and comparable races. Ferrari also fell from second in the 2024 Constructors’ standings to fourth in 2025.</p>
+    <p>By September 2026, the picture is different: a win, five podiums, third in the championship, an even qualifying head-to-head, and a race head-to-head lead over Leclerc.</p>
+  </div>
+</section>
+
+<section class="answer reveal">
+  <p class="eyebrow">SO, IS THE GOAT FADED?</p>
+  <h2>Some of the decline is real.<br><span>The simple version isn’t.</span></h2>
+  <div class="answer-grid">
+    <article><b>01</b><h4>The peak did end.</h4><p>His win, podium and pole rates are nowhere near the 2014–2020 level.</p></article>
+    <article><b>02</b><h4>The car fell too.</h4><p>Mercedes moved away from title-winning machinery at the same time Hamilton’s headline results dropped.</p></article>
+    <article><b>03</b><h4>2024–25 matter.</h4><p>Those teammate comparisons, especially qualifying, are real evidence of weaker relative performance.</p></article>
+    <article><b>04</b><h4>But 2026 matters too.</h4><p>The rebound against Leclerc makes a straight year-by-year fade hard to defend.</p></article>
+  </div>
+  <p class="final-line">My read: Hamilton is no longer the driver who turned half a season into wins. But judging every later year against that version of him makes “decline” look cleaner than it is. The data shows a driver past his peak, cars that also moved backwards, one ugly adaptation year, and a 2026 season that refuses to fit the neat ending.</p>
+</section>
+
+<section class="method reveal">
+  <div><p class="eyebrow">METHOD</p><h3>How I checked it</h3></div>
+  <div class="method-grid">
+    <p><b>Outcome rates</b><br>Wins, podiums and poles divided by Grand Prix starts.</p>
+    <p><b>Teammate comparison</b><br>Qualifying H2H, race H2H and share of teammate-pair championship points.</p>
+    <p><b>Car context</b><br>Constructor championship position beside Hamilton’s results.</p>
+    <p><b>Limits</b><br>Teammates are not perfect controls. 2026 is incomplete. H2H rules are documented in the repo.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div><b>THE McQUEEN EFFECT</b><br><span>Lewis Hamilton career analysis · Beryl Koko</span></div>
+  <div class="credits">Data: Formula 1 official results + documented cross-checks.<br>Reusable photography credited in repository.</div>
+</footer>
+<script src="analysis.js"></script>
+</body>
+</html>
