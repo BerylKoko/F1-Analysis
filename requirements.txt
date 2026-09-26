@@ -1,1 +1,1 @@
-streamlit
+pandas>=2.0\n
